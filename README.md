@@ -12,4 +12,4 @@
 
 
 
-In iSpecs the client raspberry pi send the images obtain by picamera as a POST request and got the response of object detection in json format which will be spoken via tts engine in client.
+In iSpecs the client raspberry pi send the images obtain by picamera as a POST request and get the response of object detection in json format which will be spoken via tts engine in client.
