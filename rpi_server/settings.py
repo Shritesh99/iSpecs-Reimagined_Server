@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import numpy as np
+import cv2
 from darkflow.net.build import TFNet
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -26,7 +28,6 @@ SECRET_KEY = 'e3t7ydsxs1*(w+pdtm_4_w2za8-^!3c1lm7aq7n6p%g(x96ezr'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -71,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rpi_server.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -81,7 +81,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -101,7 +100,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -115,16 +113,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
 
 options = {
-        'model': '/Users/shri99/darkflow/cfg/yolo.cfg',
-        'load': '/Users/shri99/darkflow/bin/yolo.weights',
-        'config': '/Users/shri99/darkflow/cfg',
-    }
+    'model': '/Users/shri99/darkflow/cfg/yolo.cfg',
+    'load': '/Users/shri99/darkflow/bin/yolo.weights',
+    'config': '/Users/shri99/darkflow/cfg',
+}
 
 tfnet = TFNet(options)
+colors = [tuple(255 * np.random.rand(3)) for _ in range(10)]
+count = 1
