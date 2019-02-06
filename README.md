@@ -5,8 +5,10 @@ iSpecs is the real time object detection specs based on YOLO with Raspberry pi.
 It's like regular specs but with object detection
 
 This is the server side repository of iSpecs in which detection occurs on each and every frame send by client side of iSpecs.
-
-![workflow diagram here](https://raw.githubusercontent.com/Shritesh99/iSpecs-Reimagined_Server/master/images/iSpecs-Arch.png)
+<h1 align="center">
+<br>
+<img src="https://raw.githubusercontent.com/Shritesh99/iSpecs-Reimagined_Server/master/images/iSpecs-Arch.png" />
+</h1>  
 
 ### New Features!
   - Real Time Object detection.
